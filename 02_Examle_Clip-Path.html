@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        html {
+            font-family: "Hind Siliguri", sans-serif;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 111;
+        }
+
+        .heading {
+            display: flex;
+        }
+
+        .logo {
+            border: 3px solid rgb(255, 255, 255);
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+
+        span {
+            letter-spacing: 15px;
+            background-color: white;
+        }
+
+        .menubar {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menubar ul a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            transition: ease;
+        }
+
+        .menubar ul a:hover {
+            border-bottom: 2px solid red;
+        }
+
+        .menubar ul {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+        }
+
+        .homepage .bgimage {
+            background-image: url(../Images/skyimage.jpg);
+            width: 100%;
+            padding: 285px 0;
+            position: relative;
+            z-index: 1;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-attachment: fixed; */
+            clip-path: polygon(0 0, 100% 0%, 100% 81%, 52% 100%, 0 79%);
+        }
+
+        h4 {
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+
+        .sky {
+            text-align: center;
+            color: white;
+            font-size: 60px;
+            text-transform: capitalize;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+            font-size: 17px;
+            padding-top: 15px;
+            padding: 20px 217px;
+        }
+
+        .underline {
+            display: flex;
+            gap: 10px;
+            position: relative;
+        }
+
+        .underline .line1 {
+            position: absolute;
+            color: white;
+            size: 5px;
+            width: 245px;
+            margin-left: 515px;
+            margin-top: 3px;
+        }
+
+        .underline .icon {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            color: rgb(244, 139, 118);
+            size: 20px;
+            margin-left: 785px;
+            margin-top: -7px;
+        }
+
+        .underline .line2 {
+            position: absolute;
+            color: white;
+            size: 5px;
+            width: 245px;
+            margin-left: 825px;
+            margin-top: 3px;
+        }
+
+        .button {
+            margin-left: 630px;
+            margin-top: 15px;
+        }
+
+        .button .btn1 {
+            height: 35px;
+            width: 140px;
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 0, 0, 0);
+            font-size: 15px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        .button .btn2 {
+            height: 35px;
+            width: 140px;
+            background-color: rgba(249, 249, 249, 0);
+            color: black;
+            border-radius: 5px;
+            font-size: 15px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+
+        .anchor {
+            position: absolute;
+            z-index: 1;
+            background-color: gray;
+            border-radius: 50%;
+            height: 80px;
+            width: 100px;
+            display: grid;
+            place-items: center;
+            margin-left: 743px;
+            margin-top: -30px;
+        }
+
+        .fa-anchor {
+            font-size: 30px;
+            color: white;
+        }
+
+        .flexitem {
+            /* border: 1px solid black; */
+            display: grid;
+            grid-template-columns: repeat(4 , 1fr);
+            gap: 15px;
+            justify-content: center;
+            max-width: 100%;
+            height: 300px;
+        }
+
+        .main1,
+        .main2,
+        .main3,
+        .main4 {
+            position: relative;
+            width: 300px;
+            padding-top: 100px;
+            /* border: 1px solid black; */
+            padding: 115px 90px;
+        }
+
+        .i1,
+        .i2,
+        .i3,
+        .i4 {
+            /* padding-left: 45px;
+            padding-bottom: 10px; */
+            border: 1px solid red;
+            display: grid;
+            place-items: center;
+            height: 60px;
+            width: 60px;
+            margin: 7px 25px;
+            color: red;
+        }
+
+        .i1 {
+            transform: rotate(222deg);
+        }
+
+        .fa-glasses {
+            transform: rotate(140deg);
+        }
+
+        .p1,
+        .p2,
+        .p3,
+        .p4 {
+            color: black;
+            width: 300px;
+            /* border: 1px solid black; */
+            padding: 0 1px;
+            margin: 0 -91px;
+            text-align: justify;
+            padding-top: 10px;
+        }
+
+        h3 {
+            padding-left: 5px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid orangered;
+            text-transform: capitalize;
+        }
+
+        .redheading {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="heading">
+            <div class="logo">
+                <h1><span>L</span>ogo</h1>
+            </div>
+            <div class="menubar">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">Team</a>
+                    </li>
+                    <li>
+                        <a href="#">blog</a>
+                    </li>
+                    <li>
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="homepage">
+        <div class="bgimage">
+            <div class="text">
+                <h4>Our clients are our first priority</h4>
+                <h1 class="sky">welcome to sky</h1>
+            </div>
+            <div class="underline">
+                <div class="line1">
+                    <hr>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+                <div class="line2">
+                    <hr>
+                </div>
+            </div>
+            <div class="text2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quisquam a assumenda tenetur ut
+                    et
+                    maxime nam obcaecati, pariatur recusandae, porro delectus, modi quasi ratione placeat
+                    reprehenderit
+                    deserunt aliquid eum.</p>
+            </div>
+            <div class="button">
+                <button class="btn1">Get stared now</button>
+                <button class="btn2">learn more</button>
+            </div>
+        </div>
+        <div class="anchor">
+            <i class="fa-solid fa-anchor"></i>
+        </div>
+
+    </section>
+    <section class="flexbox">
+        <div class="flexitem">
+            <div class="main1">
+                <div class="i1">
+                    <i class="fa-solid fa-glasses"></i>
+                </div>
+                <div class="t1">
+                    <h3 class="redheading">sleek design</h3>
+                    <p class="p1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae illum distinctio
+                        inventore
+                        nisi. Odit officia perferendis iste deleniti non? Vitae quidem eligendi facere voluptate
+                        dignissimos aut! Ut maxime recusandae voluptates.</p>
+                </div>
+            </div>
+            <div class="main2">
+                <div class="i2">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="t2">
+                    <h3>clean code</h3>
+                    <p class="p2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae illum distinctio
+                        inventore
+                        nisi. Odit
+                        officia perferendis iste deleniti non? Vitae quidem eligendi facere voluptate dignissimos
+                        aut!
+                        Ut maxime
+                        recusandae voluptates.</p>
+                </div>
+            </div>
+            <div class="main3">
+                <div class="i3">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="t3">
+                    <h3>creative idea</h3>
+                    <p class="p3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae illum distinctio
+                        inventore
+                        nisi. Odit
+                        officia perferendis iste deleniti non? Vitae quidem eligendi facere voluptate dignissimos
+                        aut!
+                        Ut maxime
+                        recusandae voluptates.</p>
+                </div>
+            </div>
+            <div class="main4">
+                <div class="i4">
+                    <i class="fa-solid fa-message"></i>
+                </div>
+                <div class="t4">
+                    <h3>free support</h3>
+                    <p class="p4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae illum distinctio
+                        inventore
+                        nisi. Odit
+                        officia perferendis iste deleniti non? Vitae quidem eligendi facere voluptate dignissimos
+                        aut!
+                        Ut maxime
+                        recusandae voluptates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
